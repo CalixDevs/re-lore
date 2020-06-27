@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "1.3.72"
+
+    id("com.github.johnrengelman.shadow") version "5.2.0"
 }
 
 group = "io.arct"
@@ -39,5 +41,21 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
+    }
+}
+
+configurations {
+    runtime {
+        exclude(module = "spigot-api")
+    }
+}
+
+tasks {
+    shadowJar {
+        archiveBaseName.set("relore")
+        archiveClassifier.set("")
+        archiveVersion.set("1.0.0")
+
+        minimize()
     }
 }
