@@ -1,0 +1,7 @@
+main: 'io.arct.relore.ReLore'
+name: 'ReLore'
+author: 'arctfox'
+version: '1.0.0'
+
+description: >
+  Add custom lore to your items!

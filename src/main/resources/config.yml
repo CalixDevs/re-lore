@@ -1,0 +1,33 @@
+# Items are matched in top-down order
+# So, if the third item AND the fourth item match, the third item is applied
+# If no items match, the the picked up item will not be modified
+
+# Having the last item in the configuration that matches all names and item types
+# will give a default case for items (based on the matching rules above)
+
+# Each item can have the matching attributes "name" and "material"
+# These are optional and default to '*' if they are not used.
+# '*' simply means "match everything"
+# The "lore" attribute is a list of lines of lore to apply to the item if a match is found.
+
+items:
+  - name: 'yeet' # Item must match name (including color codes)
+
+    lore:
+      - "hi :)"
+
+  - material: 'COOKIE' # Item must match type
+
+    lore:
+      - '&7The nicest &ecookies &7are the ones that have lore on them.'
+      - "&7Or maybe they're the ones that track you on the &ainternet&7."
+      - '&7What do you think?'
+
+  - name: '&ecool diamond >:D' # Item must match name AND type
+    material: 'DIAMOND'
+
+    lore:
+      - "i am a very cool diamond"
+
+  - lore: # Item matches everything (default)
+      - '&7This item was forgotten :('
